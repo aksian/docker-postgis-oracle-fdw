@@ -22,11 +22,11 @@ RUN apt-get update && apt-get install -yy apt-utils && apt-get upgrade -yy && ap
 COPY oracle\ /tmp
 
 RUN unzip "/tmp/*.zip" -d /tmp \
-    && apt-get install --reinstall ca-certificates
-    && mkdir /usr/local/share/ca-certificates/cacert.org
-    && wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt
-    && update-ca-certificates
-    && git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt
+    && apt-get install --reinstall ca-certificates \
+    && mkdir /usr/local/share/ca-certificates/cacert.org \
+    && wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt \
+    && update-ca-certificates \
+    && git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt \
     && cd /tmp \
     && git clone https://github.com/laurenz/oracle_fdw.git -b ORACLE_FDW_${ORACLE_FDW_VER} \
     && cd /tmp/oracle_fdw \
