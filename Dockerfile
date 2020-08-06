@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -yy apt-utils && apt-get upgrade -yy && ap
     unzip \
     git \
     postgresql-server-dev-all \
-    postgresql-common
+    postgresql-common \
+    wget
 
 COPY oracle\ /tmp
 
