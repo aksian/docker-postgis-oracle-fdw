@@ -5,10 +5,10 @@ ARG ORACLE_VER=19_8
 FROM postgis/postgis:$POSTGIS_VER
 MAINTAINER Andrei Terentiev <andrei@terentiev.org>
 
-ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND noninteractive
 ENV ORACLE_HOME /tmp/instantclient_${ORACLE_VER}
 ENV LD_LIBRARY_PATH /tmp/instantclient_${ORACLE_VER}
-ENV ORACLE_FDW_VER=${ORACLE_FDW_VER}
+ENV ORACLE_FDW_VER ${ORACLE_FDW_VER}
 
 RUN apt-get update && apt-get install -yy apt-utils && apt-get upgrade -yy && apt-get install -yy --no-install-recommends \
     libaio1 \
