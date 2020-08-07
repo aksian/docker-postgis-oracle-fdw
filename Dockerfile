@@ -34,7 +34,7 @@ ENV ORACLE_FDW_VERSION ${ORACLE_FDW_VER}
 ENV PARTMAN_VERSION ${PARTMAN_VER}
 
 RUN echo --- CA certificates update - see https://stackoverflow.com/questions/35821245/github-server-certificate-verification-failed/35824116 \
-    && apt-get install --reinstall ca-certificates \
+    && apt-get install -yy --reinstall ca-certificates \
     && mkdir /usr/local/share/ca-certificates/cacert.org \
     && wget -P /usr/local/share/ca-certificates/cacert.org http://www.cacert.org/certs/root.crt http://www.cacert.org/certs/class3.crt \
     && update-ca-certificates \
