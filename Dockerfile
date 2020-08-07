@@ -10,9 +10,9 @@ ARG PARTMAN_VER=4.4.0
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN echo --- Performing OS update... \
-    && apt-get update 
-    && apt-get install -yy apt-utils 
-    && apt-get upgrade -yy 
+    && apt-get update \
+    && apt-get install -yy apt-utils \
+    && apt-get upgrade -yy \
     && echo --- Installing packages that is necessary for build... \
     && apt-get install -yy --no-install-recommends \
     libaio1 \
