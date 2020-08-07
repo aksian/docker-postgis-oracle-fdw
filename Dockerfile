@@ -47,6 +47,8 @@ RUN echo ---! CA certificates update - see https://stackoverflow.com/questions/3
     && make \
     && make install \
     && echo ---! Building pg_partman... \
+    && cd /tmp \
     && git clone https://github.com/pgpartman/pg_partman.git -b v${PARTMAN_VERSION} \
+    && cd /tmp/pg_partman \
     && make install \
     && echo ---! All done.
