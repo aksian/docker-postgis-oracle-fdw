@@ -23,7 +23,8 @@ RUN echo ---! Performing OS update... \
     git \
     postgresql-server-dev-all \
     postgresql-common \
-    wget
+    wget \
+    locales-all
 
 COPY oracle\ /tmp
 
